@@ -26,7 +26,6 @@ class RandomWords extends StatefulWidget {
 }
 
 class _RandomWordsState extends State<RandomWords> {
-  @override 
   final _suggestions = <WordPair>[];
   final _saved = <WordPair>{};
   final _biggerFont = const TextStyle(fontSize: 18.0);
@@ -37,7 +36,7 @@ class _RandomWordsState extends State<RandomWords> {
       appBar: AppBar(
         title: Text('Flutter Layout Demo'),
         actions: [
-          IconButton(onPressed: () {_pushSaved(context);}, icon: Icon(Icons.list))
+          IconButton(onPressed:_pushSaved, icon: Icon(Icons.list))
         ],
       ),
       body: _buildSuggestions(),
@@ -92,7 +91,7 @@ class _RandomWordsState extends State<RandomWords> {
     );
   }
 
-  void _pushSaved(BuildContext context) {
+  void _pushSaved() {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         builder: (BuildContext context) {
